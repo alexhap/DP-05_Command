@@ -13,7 +13,7 @@ public class SimpleRemoteControl {
         this.slot = command;
     }
 
-    public void puttonWasPressed() {
+    public void buttonWasPressed() {
         slot.execute();
     }
 }

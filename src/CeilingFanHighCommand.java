@@ -3,11 +3,12 @@
  *
  */
 
-public class CeilingFanOffCommand implements Command {
-    CeilingFan ceilingFan;
-    int prevSpeed;
+public class CeilingFanHighCommand implements Command {
 
-    public CeilingFanOffCommand(CeilingFan ceilingFan) {
+    int prevSpeed;
+    CeilingFan ceilingFan;
+
+    public CeilingFanHighCommand(CeilingFan ceilingFan) {
         this.ceilingFan = ceilingFan;
         prevSpeed = FanSpeedEnum.OFF.ordinal();
     }
@@ -15,7 +16,7 @@ public class CeilingFanOffCommand implements Command {
     @Override
     public void execute() {
         prevSpeed = ceilingFan.getSpeed();
-        ceilingFan.setSpeed(FanSpeedEnum.OFF);
+        ceilingFan.setSpeed(FanSpeedEnum.HIGH);
     }
 
     @Override
